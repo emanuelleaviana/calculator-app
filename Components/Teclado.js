@@ -42,13 +42,19 @@ export default function Teclado() {
 }
 
 const styles = StyleSheet.create({
-    grade: {
-        flexDirection:'row',
-        flexWrap:'wrap',
-    },
+    
     teclado: {
+        flex:0.55,
         alignItems:'center',
         alignContent:'flex-end',
         backgroundColor:'#292d36',
-    }
+        marginTop:'auto',
+        borderTopStartRadius:40,
+        borderTopEndRadius:40,
+    },
+    grade: {
+        flexDirection:'row',
+        flexWrap:'wrap',
+        marginTop:20,
+    },
 })
