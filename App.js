@@ -6,12 +6,7 @@ import Calculadora from './Componentes/Calculadora';
 
 export default function App() {
   return (
-   
-  
-    <Visor></Visor>
-
-  
-
+    <Teclado />
   );
 }
 
