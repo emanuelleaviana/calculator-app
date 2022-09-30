@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Botao(props) {
     return (
         <View style={styles.estilo}>
-            <Text>3</Text>
+            <Text>1</Text>
         </View>
     );
 }

@@ -4,13 +4,12 @@ function Visor() {
   return (
 
  <View style={styles.visor} >
-  <Text style={styles.text}>1234</Text>
+  <Text style={styles.text}>80 + 90</Text>
  </View>
    
 
   )
 }
-
 const styles = StyleSheet.create ({
   visor: {
     flex: 0.45,
