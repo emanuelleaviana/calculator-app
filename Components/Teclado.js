@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Botao from './Botao';
 
+
 export default function Teclado() {
     return (
         <View style={styles.teclado}>
@@ -51,16 +52,25 @@ export default function Teclado() {
             <View style={styles.estilo}>
             <Text style={styles.textoVERMELHO}>+</Text>
         </View>
+
         </View>
 
         <View style={styles.grade}>
             <Botao number='1'/>
+            <Botao number='2'/>
+            <Botao number='3'/>
+            <Botao number='+'/>
+        </View>
+
+        <View style={styles.grade}>
+            <Botao number='\uf2f9'/>
             <Botao number='0'/>
             <Botao number='.'/>
             <View style={styles.estilo}>
             <Text style={styles.textoVERMELHO}>=</Text>
         </View>
         </View>
+
 
         </View>      
     );
@@ -70,12 +80,13 @@ const styles = StyleSheet.create({
     
     teclado: {
         flex:0.65,
+
         alignItems:'center',
         alignContent:'flex-end',
         backgroundColor:'#292d36',
         marginTop:'auto',
         borderRadius:40
-         
+
     },
     grade: {
         flexDirection:'row',
@@ -102,4 +113,5 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         fontSize:20,
     }
+
 })
