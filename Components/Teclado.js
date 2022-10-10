@@ -5,36 +5,38 @@ export default function Teclado() {
     return (
         <View style={styles.teclado}>
         <View style={styles.grade}>
-            <Botao />
-            <Botao />
-            <Botao />
-            <Botao />
+            <Botao number='AC'/>
+            <Botao number='1'/>
+            <Botao number='%'/>
+            <Botao number='÷'/>
         </View>
 
         <View style={styles.grade}>
-            <Botao />
-            <Botao />
-            <Botao />
-            <Botao />
+            <Botao number='7'/>
+            <Botao number='8'/>
+            <Botao number='9'/>
+            <Botao number='x'/>
         </View>
 
         <View style={styles.grade}>
-            <Botao />
-            <Botao />
-            <Botao />
-            <Botao />
+            <Botao number='4'/>
+            <Botao number='5'/>
+            <Botao number='6'/>
+            <Botao number='-'/>
         </View>
 
-        <View style={styles.grade}><Botao />
-            <Botao />
-            <Botao />
-            <Botao />
+        <View style={styles.grade}>
+            <Botao number='1'/>
+            <Botao number='2'/>
+            <Botao number='3'/>
+            <Botao number='+'/>
         </View>
 
-        <View style={styles.grade}><Botao />
-            <Botao />
-            <Botao />
-            <Botao />
+        <View style={styles.grade}>
+            <Botao number='1'/>
+            <Botao number='0'/>
+            <Botao number='.'/>
+            <Botao number='='/>
         </View>
 
         </View>      
@@ -44,7 +46,7 @@ export default function Teclado() {
 const styles = StyleSheet.create({
     
     teclado: {
-        flex:0.55,
+        flex:0.60,
         alignItems:'center',
         alignContent:'flex-end',
         backgroundColor:'#292d36',
