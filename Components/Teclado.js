@@ -39,9 +39,10 @@ export default function Teclado() {
             <Botao number='.'/>
             <Botao number='='/>
         </View>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
-
+    
 })
