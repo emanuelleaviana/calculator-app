@@ -6,7 +6,10 @@ import Calculadora from './Components/Calculadora';
 
 export default function App() {
   return (
-    <Teclado></Teclado>
+    <>
+    <Visor />
+    <Teclado />
+    </>
   );
 }
 
