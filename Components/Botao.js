@@ -10,8 +10,8 @@ export default function Botao(props) {
 
 const styles = StyleSheet.create({
     estilo: {
-        width:70,
-        height:70,
+        width:80,
+        height:80,
         backgroundColor: '#272b33',
         margin:5,
         borderRadius:25,
@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
         textAlign:'center',
         color:'white',
         fontWeight:'bold',
-        fontSize:20,
+        fontSize:30,
     }
 })

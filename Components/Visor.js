@@ -4,8 +4,8 @@ function Visor() {
   return (
 
  <View style={styles.visor} >
-  <Text style ={styles.minivisor}>400+400</Text>
-  <Text style={styles.text}>800</Text>
+  <Text style ={styles.minivisor}>308  x  42</Text>
+  <Text style={styles.text}>12936</Text>
  </View>
    
 
@@ -13,23 +13,24 @@ function Visor() {
 }
 const styles = StyleSheet.create ({
   visor: {
-    flex: 0.40,
+    flex:0.30 , 
     backgroundColor:'#22252d',
     justifyContent:'flex-end',
+    position:'relative',
+   
   },
 
 text:{
   color:'white',
   fontSize:70,
-  textAlign:'right'
+  textAlign:'right',
+  fontWeight:'bold'
 
 },
   minivisor: {
     color:'white',
-    fontSize: 20,
-    textAlign:'right'
-  
-
+    fontSize: 30,
+    textAlign:'right',
   },
 });
 
