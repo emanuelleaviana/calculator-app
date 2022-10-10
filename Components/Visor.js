@@ -4,13 +4,13 @@ function Visor() {
   return (
 
  <View style={styles.visor} >
-  <Text style={styles.text}>1234</Text>
+  <Text style ={styles.minivisor}>400+400</Text>
+  <Text style={styles.text}>800</Text>
  </View>
    
 
   )
 }
-
 const styles = StyleSheet.create ({
   visor: {
     flex: 0.45,
@@ -21,10 +21,17 @@ const styles = StyleSheet.create ({
 
 text:{
   color:'white',
-  fontSize:45,
+  fontSize:70,
   textAlign:'right'
 
-}
+},
+  minivisor: {
+    color:'white',
+    fontSize: 20,
+    textAlign:'right'
+  
+
+  },
 });
 
 
