@@ -13,9 +13,8 @@ function Visor() {
 }
 const styles = StyleSheet.create ({
   visor: {
-    flex: 0.45,
+    flex: 0.40,
     backgroundColor:'#22252d',
-    borderRadius:10,
     justifyContent:'flex-end',
   },
 

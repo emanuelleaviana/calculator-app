@@ -8,7 +8,7 @@ export default function App() {
   return (
    
   
-    <Visor></Visor>
+    <><Visor></Visor><Teclado></Teclado></> 
 
   );
 }
