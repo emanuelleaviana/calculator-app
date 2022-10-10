@@ -6,7 +6,7 @@ export default function Teclado() {
         <View style={styles.teclado}>
         <View style={styles.grade}>
             <Botao number='AC'/>
-            <Botao number='1'/>
+            <Botao number='+/-'/>
             <Botao number='%'/>
             <Botao number='÷'/>
         </View>
