@@ -9,6 +9,7 @@ export default function App() {
       <View style={styles.fundo}>
     <><StatusBar /><><Visor></Visor><Teclado></Teclado></></> 
     </View>
+
   );
 }
 const styles = StyleSheet.create ({
