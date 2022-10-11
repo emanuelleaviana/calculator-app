@@ -69,7 +69,7 @@ export default function Teclado() {
 const styles = StyleSheet.create({
     
     teclado: {
-        flex:0.70,
+        flex:0.60,
         alignItems:'center',
         alignContent:'flex-end',
         backgroundColor:'#292d36',
