@@ -79,14 +79,13 @@ export default function Teclado() {
 const styles = StyleSheet.create({
     
     teclado: {
-        flex:0.65,
-
+        flex:0.60,
         alignItems:'center',
         alignContent:'flex-end',
         backgroundColor:'#292d36',
         marginTop:'auto',
-        borderRadius:40
-
+        borderTopStartRadius:40,
+        borderTopEndRadius:40,
     },
     grade: {
         flexDirection:'row',
