@@ -21,7 +21,7 @@ export default function Teclado() {
         </View>
 
         <View style={styles.estilo}>
-            <Text style={styles.textoVERMELHO}>/</Text>
+            <Text style={styles.textoVERMELHO}> ÷</Text>
             
         </View>
         </View>
@@ -54,7 +54,7 @@ export default function Teclado() {
         </View>
 
         <View style={styles.grade}>
-            <Botao number='1'/>
+            <Botao number='↺'/>
             <Botao number='0'/>
             <Botao number='.'/>
             <View style={styles.estilo}>
@@ -69,7 +69,7 @@ export default function Teclado() {
 const styles = StyleSheet.create({
     
     teclado: {
-        flex:0.60,
+        flex:0.65,
         alignItems:'center',
         alignContent:'flex-end',
         backgroundColor:'#292d36',
