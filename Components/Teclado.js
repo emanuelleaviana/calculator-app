@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Botao from './Botao';
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
+
 
 export default function Teclado() {
     return (
@@ -8,21 +11,21 @@ export default function Teclado() {
         <View style={styles.grade}>
 
         <View style={styles.estilo}>
-            <Text style={styles.textoVERDE}>AC</Text>
+            <Text style={styles.textoVerde}>AC</Text>
         </View>
 
         <View style={styles.estilo}>
-            <Text style={styles.textoVERDE}>+/-</Text>
+            <Text style={styles.textoVerde}>+/-</Text>
             
         </View>
 
         <View style={styles.estilo}>
-            <Text style={styles.textoVERDE}>%</Text>
+            <Text style={styles.textoVerde}>%</Text>
             
         </View>
 
         <View style={styles.estilo}>
-            <Text style={styles.textoVERMELHO}> ÷</Text>
+            <Text style={styles.textoVermelho}>÷</Text>
             
         </View>
         </View>
@@ -32,7 +35,7 @@ export default function Teclado() {
             <Botao number='8' id='8'/>
             <Botao number='9' id ='9'/>
             <View style={styles.estilo}>
-            <Text style={styles.textoVERMELHO}>x</Text>
+            <Text style={styles.textoVermelho}>x</Text>
         </View>
         </View>
 
@@ -41,8 +44,8 @@ export default function Teclado() {
             <Botao number='5' id='5'/>
             <Botao number='6' id='6'/>
             <View style={styles.estilo}>
-            <Text style={styles.textoVERMELHO}>-</Text>
-        </View>
+                <Text style={styles.textoVermelho}>━</Text>
+            </View>
         </View>
 
         <View style={styles.grade}>
@@ -50,17 +53,23 @@ export default function Teclado() {
             <Botao number='2'/>
             <Botao number='3'/>
             <View style={styles.estilo}>
-            <Text style={styles.textoVERMELHO}>+</Text>
+            <Text style={styles.textoVermelho}>
+                <Entypo name="plus" size={25}/>
+            </Text>
         </View>
 
         </View>
 
         <View style={styles.grade}>
-            <Botao number='↺'/>
+            <View style={styles.estilo}>
+                <Text style={styles.caractereEspecial}>
+                <MaterialCommunityIcons name="restore" size={25}/>
+                </Text>
+            </View>
             <Botao number='0'/>
             <Botao number='.'/>
             <View style={styles.estilo}>
-            <Text style={styles.textoVERMELHO}>=</Text>
+            <Text style={styles.textoVermelho}>=</Text>
         </View>
         </View>
 
@@ -95,17 +104,23 @@ const styles = StyleSheet.create({
         borderRadius:25,
         justifyContent:'center',
     },
-    textoVERDE:{
+    textoVerde:{
         textAlign:'center',
         color:'#26f3ce',
         fontWeight:'bold',
-        fontSize:20,
+        fontSize:25,
     },
-    textoVERMELHO:{
+    textoVermelho:{
         textAlign:'center',
         color:'#d76061',
         fontWeight:'bold',
-        fontSize:20,
+        fontSize:25,
+    },
+    caractereEspecial:{
+        textAlign:'center',
+        color:'white',
+        fontWeight:'bold',
+        transform: [{ rotate: '35deg'}],
     }
 
 })
