@@ -57,19 +57,14 @@ export default function Teclado() {
 
         <View style={styles.grade}>
             <Botao number='↺'/>
-            <Botao number='2'/>
-            <Botao number='3'/>
-            <Botao number='+'/>
-        </View>
-
-        <View style={styles.grade}>
-            <Botao number='\uf2f9'/>
             <Botao number='0'/>
             <Botao number='.'/>
             <View style={styles.estilo}>
             <Text style={styles.textoVERMELHO}>=</Text>
         </View>
         </View>
+
+       
 
 
         </View>      
