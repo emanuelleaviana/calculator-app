@@ -11,7 +11,9 @@ export default function Calculadora() {
         console.log(buttonPressed)
         if (buttonPressed === '+' | buttonPressed === "-" | buttonPressed === "*" | buttonPressed === "/") {
             setNumAtual(numAtual + " " + buttonPressed + " ")
-            return
+            return {
+                
+            }
         }
     }
 }

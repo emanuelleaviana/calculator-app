@@ -48,7 +48,7 @@ export default function Teclado() {
             </View>
         </View>
 
-        <View style={styles.grade}>
+            <View style={styles.grade}>
             <Botao number='1'/>
             <Botao number='2'/>
             <Botao number='3'/>

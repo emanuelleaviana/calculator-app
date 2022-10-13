@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, button } from 'react-native';
+import {StyleSheet, Text, View, button, Touchable, TouchableOpacity } from 'react-native';
 import {valorEntrada} from './Calculadora';
 
 export default function Botao(props) {
     return (
-        <button style={styles.estilo} onPress={() => valorEntrada(button)}>
+        <TouchableOpacity onPress={() => valorEntrada()} style={styles.estilo} >
             <Text style={styles.texto}>{props.number}</Text>
-        </button>
+        </TouchableOpacity>
     );
 }
 
@@ -23,6 +23,5 @@ const styles = StyleSheet.create({
         color:'white',
         fontWeight:'bold',
         fontSize:25,
-
     }
 })
