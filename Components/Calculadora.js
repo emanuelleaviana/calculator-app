@@ -1,8 +1,17 @@
-function Operations(){
+import { StyleSheet, Text, View,  } from 'react-native';
+import React from 'react';
+import {useState} from 'react';
 
-//GetElementbyId
-//String --> Variável
-//Matrizes para cada botão
-//if or else 
 
+export default function Calculadora() {
+    const [numAtual, setNumAtual] = useState("")
+    const [numAntigo, setNumAntigo] = useState("")
+
+    function valorEntrada(buttonPressed){
+        console.log(buttonPressed)
+        if (buttonPressed === '+' | buttonPressed === "-" | buttonPressed === "*" | buttonPressed === "/") {
+            setNumAtual(numAtual + " " + buttonPressed + " ")
+            return
+        }
+    }
 }

@@ -72,16 +72,11 @@ export default function Teclado() {
             <Text style={styles.textoVermelho}>=</Text>
         </View>
         </View>
-
-       
-
-
         </View>      
     );
 }
 
-const styles = StyleSheet.create({
-    
+const styles = StyleSheet.create({    
     teclado: {
         flex:0.65,
         alignItems:'center',

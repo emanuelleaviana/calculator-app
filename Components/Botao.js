@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, button } from 'react-native';
+import {valorEntrada} from './Calculadora';
 
 export default function Botao(props) {
     return (
-        <View style={styles.estilo}>
+        <button style={styles.estilo} onPress={() => valorEntrada(button)}>
             <Text style={styles.texto}>{props.number}</Text>
-        </View>
+        </button>
     );
 }
 
