@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Button, TextInput } from 'react-native';
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 import { useState } from 'react';
 
 export default function App() {
@@ -8,13 +9,99 @@ export default function App() {
   const buttons = ['AC', '+/-', '%', '÷', 7, 8, 9, 'x', 4, 5, 6, '─', 1, 2, 3, '+', "<", 0, '.', '=']
   const [currentNumber, setCurrentNumber] = useState(" ");
   const [lastNumber, setLastNumber] = useState(" ");
-  const [buttonAC, setButtonAC] = useState(" ");
-
+  const [darkMode, setDarkMode] = useState(false);
+  const styles = StyleSheet.create({
+    background: {
+      flex: 1,
+      backgroundColor: darkMode ? '#22252d' : '#ffffff',
+    },
+    backgroundKeyboard: {
+      flex: 0.65,
+      alignItems: 'center',
+      alignContent: 'flex-end',
+      backgroundColor: darkMode ? '#292d36' : '#f9f9f9',
+      marginTop: 'auto',
+      borderTopStartRadius: 40,
+      borderTopEndRadius: 40,
+    },
+    keyboard: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      marginTop: 20,
+      justifyContent: 'center',
+    },
+    button: {
+      width: 80,
+      height: 80,
+      backgroundColor: darkMode ? '#272b33' : '#f7f7f7',
+      margin: 5,
+      borderRadius: 25,
+      justifyContent: 'center',
+      position: 'relative',
+    },
+    text: {
+      textAlign: 'center',
+      color: darkMode ? 'white' : '#2c2f38',
+      fontWeight: 'bold',
+      fontSize: 25,
+    },
+    greenText: {
+      color: '#26f3ce',
+    },
+    redText: {
+      color: '#d76061',
+    },
+    specialCharacter: {
+      textAlign: 'center',
+      color: darkMode ? 'white' : '#2c2f38',
+      fontWeight: 'bold',
+      transform: [{ rotate: '35deg' }],
+    },
+    display: {
+      flex: 0.30,
+      backgroundColor: darkMode ? '#22252d' : '#ffffff',
+      justifyContent: 'flex-end',
+      position: 'relative',
+    },
+    textDisplay: {
+      color: darkMode ? 'white' : '#2c2f38',
+      fontSize: 70,
+      textAlign: 'right',
+      fontWeight: 'bold',
+    },
+    miniDisplay: {
+      color: darkMode ? 'white' : '#2c2f38',
+      fontSize: 30,
+      textAlign: 'right',
+    },
+    bar: {
+      transform: [{ rotate: '18deg' }],
+      fontWeight: 'normal',
+    },
+    plus: {
+      fontSize: 20,
+      position: 'absolute',
+      marginLeft: 25,
+      top: 18,
+    },
+    less: {
+      fontSize: 25,
+      position: 'absolute',
+      left: 42,
+      top: 28,
+    },
+    buttonDarkMode: {
+      backgroundColor: darkMode ? '#22252d' : '#ffffff',
+      alignItems:'center',
+      bottom:120,
+      margin:15,
+    }
+  });
 
   let backspace = buttons.indexOf("<");
   if (backspace !== -1) {
     buttons[backspace] = <TouchableOpacity onPress={() => handleInput("<")} style={styles.button}><Text style={styles.specialCharacter}><MaterialCommunityIcons name="restore" size={25} /></Text></TouchableOpacity>
-  };
+  };  
 
   let buttonPlusLess = buttons.indexOf("+/-");
   if (buttonPlusLess !== -1) {
@@ -27,7 +114,7 @@ export default function App() {
 
   if (currentNumber !== "" | currentNumber !== null) {
     let teste = buttons.indexOf("AC");
-    if (teste !== -1){
+    if (teste !== -1) {
       buttons[teste] = <TouchableOpacity onPress={() => clearValue("AC")} style={styles.button}><Text style={[styles.text, styles.greenText]}>C</Text></TouchableOpacity>
     }
   };
@@ -87,6 +174,9 @@ export default function App() {
   return (
     <View style={styles.background}>
       <View style={styles.display}>
+        <TouchableOpacity styles={styles.buttonDarkMode}>
+          <Entypo name={darkMode ? 'light-up' : 'moon'} size={35} color={darkMode ? "white" : 'black'} onPress={() => darkMode ? setDarkMode(false) : setDarkMode(true)} />
+          </TouchableOpacity>
         <Text style={styles.miniDisplay}>{lastNumber}</Text>
         <Text style={styles.textDisplay}>{currentNumber.toString().substring(0, 9)}</Text>
       </View>
@@ -110,84 +200,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    backgroundColor: '#22252d'
-  },
-  backgroundKeyboard: {
-    flex: 0.65,
-    alignItems: 'center',
-    alignContent: 'flex-end',
-    backgroundColor: '#292d36',
-    marginTop: 'auto',
-    borderTopStartRadius: 40,
-    borderTopEndRadius: 40,
-  },
-  keyboard: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginTop: 20,
-    justifyContent: 'center',
-  },
-  button: {
-    width: 80,
-    height: 80,
-    backgroundColor: '#272b33',
-    margin: 5,
-    borderRadius: 25,
-    justifyContent: 'center',
-    position: 'relative',
-  },
-  text: {
-    textAlign: 'center',
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 25,
-  },
-  greenText: {
-    color: '#26f3ce',
-  },
-  redText: {
-    color: '#d76061',
-  },
-  specialCharacter: {
-    textAlign: 'center',
-    color: 'white',
-    fontWeight: 'bold',
-    transform: [{ rotate: '35deg' }],
-  },
-  display: {
-    flex: 0.30,
-    backgroundColor: '#22252d',
-    justifyContent: 'flex-end',
-    position: 'relative',
-  },
-  textDisplay: {
-    color: 'white',
-    fontSize: 70,
-    textAlign: 'right',
-    fontWeight: 'bold',
-  },
-  miniDisplay: {
-    color: 'white',
-    fontSize: 30,
-    textAlign: 'right',
-  },
-  bar: {
-    transform: [{ rotate: '18deg' }],
-    fontWeight: 'normal',
-  },
-  plus: {
-    fontSize: 20,
-    position: 'absolute',
-    marginLeft: 25,
-    top: 18,
-  },
-  less: {
-    fontSize: 25,
-    position: 'absolute',
-    left: 42,
-    top: 28,
-  },
-});
