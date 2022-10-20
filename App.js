@@ -90,18 +90,18 @@ export default function App() {
       left: 42,
       top: 28,
     },
+    buttonTheme: {
+      width: 60,
+      height: 60,
+      backgroundColor: darkMode ? '#272b33' : '#f7f7f7',
+      margin: 5,
+      borderRadius: 25,
+      justifyContent: 'center',
+    },
     buttonDarkMode: {
-      backgroundColor: darkMode ? '#22252d' : '#ffffff',
-      alignItems:'center',
-      bottom:120,
-      margin:15,
+      textAlign: 'center',
     }
   });
-
-  let backspace = buttons.indexOf("<");
-  if (backspace !== -1) {
-    buttons[backspace] = <TouchableOpacity onPress={() => handleInput("<")} style={styles.button}><Text style={styles.specialCharacter}><MaterialCommunityIcons name="restore" size={25} /></Text></TouchableOpacity>
-  };  
 
   let buttonPlusLess = buttons.indexOf("+/-");
   if (buttonPlusLess !== -1) {
@@ -110,13 +110,6 @@ export default function App() {
       <Text style={[styles.text, styles.greenText, styles.bar]}>/</Text>
       <Text style={[styles.text, styles.greenText, styles.less]}>-</Text>
     </TouchableOpacity>
-  };
-
-  if (currentNumber !== "" | currentNumber !== null) {
-    let teste = buttons.indexOf("AC");
-    if (teste !== -1) {
-      buttons[teste] = <TouchableOpacity onPress={() => clearValue("AC")} style={styles.button}><Text style={[styles.text, styles.greenText]}>C</Text></TouchableOpacity>
-    }
   };
 
   function calculator() {
@@ -174,9 +167,9 @@ export default function App() {
   return (
     <View style={styles.background}>
       <View style={styles.display}>
-        <TouchableOpacity styles={styles.buttonDarkMode}>
-          <Entypo name={darkMode ? 'light-up' : 'moon'} size={35} color={darkMode ? "white" : 'black'} onPress={() => darkMode ? setDarkMode(false) : setDarkMode(true)} />
-          </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonTheme}>
+          <Entypo name={darkMode ? 'light-up' : 'moon'} size={35} color={darkMode ? "white" : 'black'} style={styles.buttonDarkMode} onPress={() => darkMode ? setDarkMode(false) : setDarkMode(true)} />
+        </TouchableOpacity>
         <Text style={styles.miniDisplay}>{lastNumber}</Text>
         <Text style={styles.textDisplay}>{currentNumber.toString().substring(0, 9)}</Text>
       </View>
@@ -189,8 +182,14 @@ export default function App() {
               button == '+/-' | button == '%' ?
                 <TouchableOpacity onPress={() => handleInput(button)} key={button} style={styles.button}><Text style={[styles.text, styles.greenText]}>{button}</Text></TouchableOpacity>
                 :
-                button == 'AC' ?
-                  <TouchableOpacity onPress={() => clearValue(button)} key={button} style={styles.button}><Text style={[styles.text, styles.greenText]}>{button}</Text></TouchableOpacity>
+                currentNumber != 0 && button == 'AC' ?
+                  <TouchableOpacity onPress={() => clearValue(button)} key={button} style={styles.button}><Text style={[styles.text, styles.greenText]}>C</Text></TouchableOpacity>
+                  :
+                  button == 'AC' ?
+                    <TouchableOpacity onPress={() => clearValue(button)} key={button} style={styles.button}><Text style={[styles.text, styles.greenText]}>{button}</Text></TouchableOpacity>
+                  :
+                  button == '<' ?
+                  <TouchableOpacity onPress={() => handleInput("<")} style={styles.button}><Text style={styles.specialCharacter}><MaterialCommunityIcons name="restore" size={25} /></Text></TouchableOpacity>
                   :
                   <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button]}><Text style={styles.text}>{button}</Text></TouchableOpacity>
           )}
@@ -199,4 +198,3 @@ export default function App() {
     </View>
   );
 }
-
