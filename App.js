@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Button, TextInput, Touchable } from 'react-native';
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
@@ -167,11 +167,10 @@ export default function App() {
   return (
     <View style={styles.background}>
       <View style={styles.display}>
-        <TouchableOpacity style={styles.buttonTheme}>
-          <Entypo name={darkMode ? 'light-up' : 'moon'} size={35} color={darkMode ? "white" : 'black'} style={styles.buttonDarkMode} onPress={() => darkMode ? setDarkMode(false) : setDarkMode(true)} />
-        </TouchableOpacity>
+         
+        <TouchableOpacity style={styles.buttonTheme}><Entypo name={darkMode ? 'light-up' : 'moon'} size={35} color={darkMode ? "white" : 'black'} style={styles.buttonDarkMode} onPress={() => darkMode ? setDarkMode(false) : setDarkMode(true)} /></TouchableOpacity>
         <Text style={styles.miniDisplay}>{lastNumber}</Text>
-        <Text style={styles.textDisplay}>{currentNumber.toString().substring(0, 9)}</Text>
+        <Text style={styles.textDisplay}>{currentNumber.toString().substring(0, 9)}</Text> 
       </View>
       <View style={styles.backgroundKeyboard}>
         <View style={styles.keyboard}>
@@ -187,11 +186,11 @@ export default function App() {
                   :
                   button == 'AC' ?
                     <TouchableOpacity onPress={() => clearValue(button)} key={button} style={styles.button}><Text style={[styles.text, styles.greenText]}>{button}</Text></TouchableOpacity>
-                  :
-                  button == '<' ?
-                  <TouchableOpacity onPress={() => handleInput("<")} style={styles.button}><Text style={styles.specialCharacter}><MaterialCommunityIcons name="restore" size={25} /></Text></TouchableOpacity>
-                  :
-                  <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button]}><Text style={styles.text}>{button}</Text></TouchableOpacity>
+                    :
+                    button == '<' ?
+                      <TouchableOpacity onPress={() => handleInput("<")} style={styles.button}><Text style={styles.specialCharacter}><MaterialCommunityIcons name="restore" size={25} /></Text></TouchableOpacity>
+                      :
+                      <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button]}><Text style={styles.text}>{button}</Text></TouchableOpacity>
           )}
         </View>
       </View>
